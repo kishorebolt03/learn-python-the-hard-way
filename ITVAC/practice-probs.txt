@@ -1,0 +1,161 @@
+1. Word Puzzle 
+
+This problem was asked by Coursera.
+Given a 2D board of characters and a word, find if the word exists in the grid.
+The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+For example, given the following board:
+
+[
+  ['A','B','C','I'],
+  ['S','I','C','S'],
+  ['E','D','E','E']
+]
+
+Input Format :
+Input consists of a single string in UPPER CASE.
+
+Output Format : 
+Output consists of a single line stating "True" - if the board contains the input string or "False" - if it doesn't contain the input string.
+
+Note : The file/class should be named as "ArrayWordPuzzle" with appropriate file extension.
+
+Input 1 :
+	ABCCED
+Output 1 :
+	True
+
+Input 2 :
+	ABCB
+Output 2 :
+	False
+
+Input 3 : 
+	SEE
+Output 3 :
+	True
+	
+Input 4 : 
+	SICK
+Output 4 :
+	False
+
+2. Reverse words in a sentence.
+
+This problem was asked by Google.
+
+Given a string of words delimited by spaces, reverse the words in string. For example, given "hello world here", return "here world hello"
+
+Taking a mutable string representation, perform this operation in-place.
+
+Input Format :
+Input contains a single line which is the input sentence A.
+
+Output Format : 
+Input contains a single line which is the reverse form of input sentence A.
+
+Constraints : 
+1 <= |S| <= 1000
+
+Note : The file/class should be named as "ReverseSentence" with appropriate file extension.
+
+Input 1 : 
+	hello world
+Output 1 : 
+	world hello
+
+Input 2 : 
+	welcome to sri shakthi
+Output 2 : 
+	shakthi sri to welcome
+	
+Input 3 : 
+	string of words delimited by
+Output 3 :
+	by delimited words of string
+
+3. Partition the given array based on a pivot value. 
+
+This problem was asked by Amazon.
+
+Given a pivot x, and a list lst, partition the list into three parts.
+
+	The first part contains all elements in lst that are less than x
+	The second part contains all elements in lst that are equal to x
+	The third part contains all elements in lst that are larger than x Ordering within a part can be arbitrary.
+
+For example, given x = 10 and lst = [9, 12, 3, 5, 14, 10, 10], one partition may be [9, 5, 3, 10, 10, 14, 12].
+
+Input Format :
+First line of the input is an integer N which is the number of elements in the input array arr[].
+Next N lines of input each contains an integer representing the elements arr[i].
+Last line of input is a single integer which corresponds to the pivot value.
+
+Output Format : 
+Single line consisting of N space separated integers.
+
+Constraints : 
+1 <= N <= 100
+0 <= arr[i] <= 10000
+
+Note : The file/class should be named as "ArrayPartition" with appropriate file extension.
+
+Input 1 : 
+	7
+	9
+	12
+	3
+	5
+	14
+	10
+	10
+	10
+Output 1 : 
+	9 5 3 10 10 14 12
+	
+Input 2 :
+	7
+	9 12 3 5 14 10 10
+	8
+Output 2 : 
+	5 3 14 12 10 10 9
+	
+Input 3 :
+	3 
+	8
+	8
+	8
+	8
+Output 3 : 
+	8 8 8
+
+Input 4 :
+	2
+	3
+	5
+	8 
+Output 4 : 
+	5 3
+
+4. How to find kth smallest element in an unsorted array?
+You are given an unsorted array of numbers and k, you need to find the kth smallest number in the array.
+
+One way to solve this problem is to sort the array in ascending order then pick the k-1th element, that would be your kth smallest number in array because array index starts at zero, but can you do better?
+
+File / Class name should be "kthSmallest".
+
+Input Format :
+N - size of the array
+'N' integer values
+k - smallest number corresponding to the index in ascending order.
+
+Output Format : 
+Single integer from the array which is the unique number
+
+Sample IO : 
+Input : 
+6
+10 2 5 3 9 4
+2 
+
+Output : 
+3
