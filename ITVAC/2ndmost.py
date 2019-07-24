@@ -7,7 +7,7 @@ def freq(n):
     o=list(w)
     for i in range(len(o)):
         cnt.append(0)
-    print(o)
+    #print(o)
     if len(n)>0 and len(n)<100:
         k=list(n)
         q=0
@@ -26,18 +26,21 @@ def freq(n):
                 o[c],o[t]=o[t],o[c]
     print(o)
     print(cnt)
-    g=len(cnt)-1
-
-
+    g=len(cnt)
+    flag=0
     if len(cnt)>2 :
-        if cnt[g]==cnt[g-1]:
+        v=0
+        while cnt[v]<cnt[g-1]:
+            v+=1
+
+        if cnt[v-1]==cnt[v-2]:
             print("no 2nd most in string")
 
         else:
-            print(o[g-1],":",cnt[g-1])
+            print(o[v-1],":",cnt[v-1])
         return 0
     else:
-        print(o[g-1],":",cnt[g-1])
+        print(o[v-1],":",cnt[v-1])
 
 
 
