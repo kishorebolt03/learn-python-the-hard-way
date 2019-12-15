@@ -1,5 +1,9 @@
 from time import sleep
+from threading import Thread as T
+from multiprocessing import Process
+import sys
 
+result=''
 
 
 '''   A A A A A
@@ -10,30 +14,40 @@ from time import sleep
       A       A
 
 '''
-def A(colA):
-    colB=colA+7
+def A(col):
+    global result
     for row in range(7):
-        for j in range(colA+7+colB):
-            if ((j==colA or j==colA+4) and  row!=0) or ((row==0 or row==3) and (j>=colA and j<=colA+4)) or ((j==colB ) or (j==colB+4 and (row!=0 and row!=3 and row!=6 ))or  (row==0 or row==3 or row==6) and (j>colB and j<colB+4)):
-                print("*",end=' ')
-            
+        for j in range(col+7):
+            if ((j==col or j==col+4) and  row!=0) or ((row==0 or row==3) and (j>=col and j<=col+4)) :
+                result=result+"A "
+                sleep(0.05)
+
             else:
-                print(end='  ')
-        print()
-'''
+                result+="  "
+        result+="\n"
 
 
 
 def B(col):
+    global result
+    colA=0
     for row in range(7):
         for j in range(col+5):
 
             if (j==col ) or (j==col+4 and (row!=0 and row!=3 and row!=6 ))or  (row==0 or row==3 or row==6) and (j>col and j<col+4)  :
-                print("B",end=' ')
-            else:
-                print(end='  ')
+                result+="B "
+                sleep(0.05)
 
-        print()
+            else:
+                result+="  "
+
+        result+="\n"
+
+
+
+
+
+
 
 def C(col):
     for row in range(7):
@@ -41,6 +55,7 @@ def C(col):
 
             if (j==col) or (row==0 or row==6) and (j>col and j<col+4):
                 print("C",end=' ')
+                sleep(0.05)
             else:
                 print(end='  ')
 
@@ -228,7 +243,7 @@ def S(col):
 
         print()
 
-def T(col):
+def t(col):
     #J
     for row in range(7):
         for j in range(col+5):
@@ -305,13 +320,25 @@ def Z(col):
         print()
 
 
+if __name__=='__main__':
+    col=0
+    with open("new.txt", "w") as textfile:
+        A(0)
+        print(result)
+        textfile.write(result)
+        result=''
+        textfile.seek(7,0)
+        B(7)
+        print(result)
+        textfile.write(result)
+        print("file updated")
+    textfile.close()
 
+    #p1 = Process(target = A ,args=(col,))
+    #p1.start()
+    #p2 = Process(target = B, args=(col+7,))
+    #p2.start()
 '''
-
-idx=[x for x in range(100) if x%7==0 ]
-A(0)
-sleep(0.5)
-B(6)
 sleep(0.5)
 C(12)
 sleep(0.5)
@@ -352,3 +379,4 @@ sleep(0.5)
 sleep(0.5)
 sleep(0.5)
 sleep(0.5)
+'''
