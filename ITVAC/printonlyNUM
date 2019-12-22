@@ -1,0 +1,11 @@
+'''
+Input:
+1
+Hi5 welcome567 batch 2019
+
+output:
+5 567
+'''
+
+t=int(input())
+for i in range(t):
