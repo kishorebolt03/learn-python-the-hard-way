@@ -1,0 +1,32 @@
+OOPS
+--------
+
+OBJECT is a real world entity
+
+class properties and behaviour  of objects
+Bottom to up approach
+
+divided in to objects
+
+has access modifiers
+
+communication btw functions 
+
+more secure
+
+supports overloading 
+
+PROCEDURAL
+---------------------
+
+top down
+
+decided in to functions
+
+no access modifiers
+
+no communication btw functions
+
+less secure
+
+no over loading

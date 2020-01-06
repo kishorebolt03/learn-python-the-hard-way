@@ -1,0 +1,50 @@
+OOP
+-------------
+
+Everything is a object
+Object is real time entity
+Class is property and behavior of object
+	it is a blue print of a object
+attributes: properties
+methods: behavior and characteristics
+
+
+EXAMPLE:
+	class: GOD
+	object: SHIVA
+	attributes: UNSEEN, has incredible powers, human form ,  
+	behavior : does favour for humans (NOTE:except ENGINEERS) 
+	
+	class:Programming LANG
+	object: Python
+	attributes: no use of ; and brackets , human understandable 
+	behavior: interpretes line by line  
+
+
+
+
+
+4 Modules:
+>>encapsulation
+	packing related things as one
+>>polymorphism (poly=many , morph=shapes)
+	same function but different object for different set of values 
+>> DATA abstraction
+	hiding unnecessary variables for user and other classes
+>>inheritence
+	inherit or reuse code from base class  or parent class
+	relation btw the class (parent and child )
+ 
+CLASS
+--------------------------
+syntax:
+class Classname:
+	stmt
+	mtds & attr
+
+obj=Classname()   <object>             //instantiating a class
+
+creating a object / instance is called instantiation of that class
+
+only when  a object is created for a class the memory will be allocated
+ 
