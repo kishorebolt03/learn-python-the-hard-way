@@ -56,13 +56,16 @@ Output
 d={}
 cnt=0
 ct=0
+lis=[]
 def solve(st2):
     global cnt,d
-    if st2 not in d.keys():
+    if st2 not in d.keys() :
         #print(cnt)
         return True
     if st2 in d.keys():
-        cnt+=1
+        if st2 not in lis:
+            lis.append(st2)
+            cnt+=1
         #print("inside else")
         l=d[st2]
         #print(l)
@@ -76,9 +79,10 @@ t1=3
 st='''H2O = H + O
 NaCL = Na + CL
 H2SO4 = H2O + S03
-S03 = S + O'''
+S03 = S + O
+H2SO4NaCL = H2SO4 + NaCL'''
 
-st2='''H2SO4'''
+st2='''H2SO4NaCL'''
 st=st.split('\n')
 st2=st2.split("\n")
 st2=list(set(st2))
