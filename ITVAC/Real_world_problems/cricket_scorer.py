@@ -142,43 +142,6 @@ Remaining wkts : 0
 '''
 
 def scorer(s):
-    ex = [i for i in s if i =='W']
-    wkts=10
-    score = s.replace('W', '').replace('.', '0')
-    res, pl = [], [1, 2]
-
-    for ball, i in zip(range(1,len(score)+1),score):
-        if i == 'O':
-            res.append((pl[0], 0))
-            pl = [max(pl) + 1, pl[1]]
-            wkts-=1
-        elif int(i) % 2 == 0:
-            res.append((pl[0], int(i)))
-            if ball % 6 == 0:
-                pl = pl[::-1]
-        else:
-            res.append((pl[0], int(i)))
-            pl = pl[::-1]
-
-    d = {k:v for k, v in res}
-    grouped = [(x, sum(v for k, v in res if k == x)) for x in d.keys()]
-    sm=0
-    print("Score")
-    print(grouped)
-    for i in grouped:
-        print(''.join(('P', str(i[0]), ':')), i[1])
-        sm+=i[1]
-    print()
-    print("Strike : P"+str(grouped[-2][0]))
-    print("Non-Strike : P"+str(grouped[-1][0]))
-    print('Total  : ',sm+len(ex))
-    print('Overs :',str(len(score)//6)+"."+str(len(score)%6))
-    print('ex :', len(ex))
-    print('wkts :',10-wkts)
-    print('Remaining wkts :',wkts)
-
-if __name__=='__main__':
-    scorer("OO1OO")def scorer(s):
     print(s)
     d_run=['1','2','3','4','6','O','0']
     ex = [i for i in s if (i =='W')]
