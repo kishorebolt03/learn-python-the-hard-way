@@ -1,0 +1,372 @@
+functions
+----------
+
+
+def <func_name>(<args>):
+	-----
+	-----
+	-----
+	(not necessary)return<variables/ return value>
+built-in func
+-------------
+
+any()
+eval
+print
+type
+len
+range()
+zip
+int 
+map
+
+
+userdef-func
+-------------
+
+req arg
+default arg
+keyword arg
+var len arg
+
+
+
+req arg
+-------
+
+with arguments
+
+default arg
+-----------
+
+>>> def add(a,b,c=10):
+	return a+b+c
+
+>>> add(b=9,a=5)
+24
+
+
+keyword arg
+-----------
+
+.
+>>> def add(a,b):
+	return a+b
+
+>>> add(b=10,a=1)
+
+variable-len arg
+-------------------
+
+>>> def add(*a):
+	return sum(a)
+
+>>> add(1,2,3,4,5)
+15
+
+
+d={'AB':{'eng':50,'sc':40},'Ra':{'eng':40,'sc':50},'Je':{'eng'
+
+
+
+lambda (Anonymous Functions)
+-------------------------------
+
+syntax:
+
+lambda arguments: expression
+
+>>> f=(lambda x:x*2)
+>>> print(f(int(input())))
+3
+6
+
+MAP()
+-----
+
+map(func , iter1,iter2,...)
+
+>>> a=map(lambda x:x*2 ,[1,2,3,4,5])
+>>> tuple(a)
+(2, 4, 6, 8, 10)
+
+
+filter()
+--------
+
+2 args 
+filter(func obj,iter)
+iter can only be 1 iter object
+
+>>> print(list(filter(lambda x:x<5 , seq)))
+[1, 2, 3]
+>>> print(list(filter(lambda x: x>5  , seq)))
+[8, 13]
+
+
+reduce()
+--------
+
+func performed some computation on a  list
+
+syntax
+import functools
+
+reduce(func,iter)
+
+
+
+
+generator func 
+-----------------
+generator is a simple way of creating iterators
+ and returns a object which can be iterated over and over
+
+>>> def add(*i):
+	yield list(i)
+
+>>> list(add(1,2,3,4,5))
+[[1, 2, 3, 4, 5]]
+
+
+
+COLLECTIONS
+------------
+
+a=[1,2,3,4,5,5,4,3,2,1]
+b=set(a)
+cnt=[0 for x in range(len(set(a))]
+
+to reduce the number of code  with predefined functions 
+to manipulate collections objects
+
+*collections in python are the containers used to store collections of data*
+
+
+
+$spl collections datatypes:
+	Counter*
+	Deque*
+	NamedTuple*
+	ChainMap*
+	OrderedDict*
+	DefaultDict
+
+
+
+
+
+COUNTERs 
+------------------------------------------------------
+
+####from collections import Counter###
+
+		return result in a dict
+		it is unordered as it is a dict
+		
+	example:	text=[1,2,3,4,4,3,3,1]
+
+
+text={1:2,3:4,3:3}
+>>> Counter(text)
+Counter({3: 3, 1: 2})
+>>> text={1:2,3:4,5:3}
+>>> Counter(text)
+Counter({3: 4, 5: 3, 1: 2})
+>>> Counter('aaaaaaaaassssssdddddddffffff')
+Counter({'a': 9, 'd': 7, 's': 6, 'f': 6})
+>>> Counter('aaaaaaaaassssssdddddddffffff'.split())
+Counter({'aaaaaaaaassssssdddddddffffff': 1})
+>>> text1=[1,2,3,4,3,3]
+>>> Counter(text1)
+Counter({3: 3, 1: 1, 2: 1, 4: 1})
+>>> 
+
+
+most_common()
+=-------------------------------------------
+
+return the result in a list and sorts based on value in reverse
+
+
+text={3:2,5:3,3:6,5:2,1:2}
+>>> Counter(text).most_common()
+[(3, 6), (5, 2), (1, 2)]
+
+
+
+elements()
+--------------------------------------------
+it will return the count of each element
+and if vallue is less than 1 it is ignored
+
+>>> list(Counter(text).elements())
+[3, 3, 3, 3, 3, 3, 5, 5, 1, 1]
+
+>>> list((Counter(text).most_common()).elements())
+>>> list(Counter(Counter(text).most_common()).elements())
+[(3, 6), (5, 2), (1, 2)]
+>>> list(Counter(Counter(text).most_common()))
+[(3, 6), (5, 2), (1, 2)]
+>>> list(Counter(text).most_common())
+[(3, 6), (5, 2), (1, 2)]
+>>> Counter(list(Counter(text).most_common()))
+Counter({(3, 6): 1, (5, 2): 1, (1, 2): 1})
+>>> Counter(list(Counter(text).most_common())).elements()
+<itertools.chain object at 0x000001B501540978>
+>>> list(Counter(list(Counter(text).most_common())).elements())
+[(3, 6), (5, 2), (1, 2)]
+>>> sorted(list(Counter(text).elements()))
+[1, 1, 3, 3, 3, 3, 3, 3, 5, 5]
+
+>>> sorted(list(Counter(text).elements()))
+[1, 1, 3, 3, 3, 3, 3, 3, 5, 5]
+
+
+Deque
+------------------------------------------------------------------------------
+
+the keyword is used to make a list as queue 
+used to add and remove elements from both ends
+
+inserting elements in deque
+append()
+	add only 1 value in right side
+appendleft()
+	add only 1 value to left side
+extendleft()
+	add another object(list) (many values) in left
+
+pop()
+
+popleft()
+
+
+
+
+
+
+
+
+subtract()		
+----------------------------------------------------------------------
+
+elements are subtracted from an iteratable or from another maping		
+
+
+Arthimetic ops ----------(add ,and ,or ,bitwise)
+
+
+DEFAULT DICT
+--------------------------------------------------------------------------------------------
+
+overcomes the shortcommings of your dict
+
+very usefull while building a nested data structure and to cater for keys not being there
+
+same as setdefault function (creates key if key not present )
+
+
+NamedTuple
+--------------------------------------------------------------------------------------------
+
+namedtuple assigns meaning to each positions in tuple
+
+
+
+
+
+ORDERED DICT
+--------------------------------------------------------------------------------------------
+
+maintains the order as of first creation
+
+example 
+d={banana:3,apple:4}
+
+sort based on keys() values() len(keystring)
+
+
+
+
+
+Sort dict
+
+
+>>> print([x for x in sorted(d.items(),key=lambda kv: kv[1] ,reverse=True)])
+[('apple', 4), ('banana', 3)]
+>>> print([x for x in sorted(d.items(),key=lambda kv: kv[0] ,reverse=True)])
+[('banana', 3), ('apple', 4)]
+>>> print([x for x in sorted(d.items(),key=lambda kv: len(kv[0]) ,reverse=True)])
+[('banana', 3), ('apple', 4)]
+>>> print([x for x in sorted(d.items(),key=lambda kv: len(kv[0]) )])
+[('apple', 4), ('banana', 3)]
+>>> d={'banana':3,'appleeeeeee':4}
+>>> print([x for x in sorted(d.items(),key=lambda kv: len(kv[0]) )])
+[('banana', 3), ('appleeeeeee', 4)]
+>>> print([x for x in sorted(d.items(),key=lambda kv: len(kv[0]) ,reverse=True)])
+[('appleeeeeee', 4), ('banana', 3)]
+>>> print([x for x in sorted(d.items(),key=lambda kv: kv[0] ,reverse=True)])
+[('banana', 3), ('appleeeeeee', 4)]
+>>> print([x for x in sorted(d.items(),key=lambda kv: kv[0] ,reverse=True)])
+[('banana', 3), ('appleeeeeee', 4)]
+>>> print([sorted(d.items(),key=lambda kv: kv[0] ,reverse=True)])
+[[('banana', 3), ('appleeeeeee', 4)]]
+>>> print(sorted(d.items(),key=lambda kv: kv[0] ,reverse=True))
+[('banana', 3), ('appleeeeeee', 4)]
+>>> print(sorted(d.items(),key=lambda kv: kv[0]))
+[('appleeeeeee', 4), ('banana', 3)]
+
+
+
+
+sort based of len and filter the length
+
+>>> 
+>>> d={'banana':3,'apple':4}
+
+>>> print(list(filter(lambda x:len(x[0])>5 ,sorted(d.items(),key=lambda kv: len(kv[0])))))
+[('banana', 3)]
+
+
+
+ChainMap
+------------------------------------------------------------------------------------------------
+
+used to combine several dictionaries
+returns a list dict
+
+
+from collections import ChainMap
+
+
+
+
+>>> dict1={'a':1,'b':2,'c':3}
+>>> dict2={'f':1,'e':2,'d':3}
+>>> cm=c.ChainMap(dict1,dict2)
+>>> cm
+ChainMap({'a': 1, 'b': 2, 'c': 3}, {'f': 1, 'e': 2, 'd': 3})
+>>> cm.maps
+[{'a': 1, 'b': 2, 'c': 3}, {'f': 1, 'e': 2, 'd': 3}]
+>>> cm.maps[0]
+{'a': 1, 'b': 2, 'c': 3}
+>>> cm.maps[0][1]
+Traceback (most recent call last):
+  File "<pyshell#204>", line 1, in <module>
+    cm.maps[0][1]
+KeyError: 1
+>>> cm.maps[0]['a']
+1
+>>>cm.get('b')
+2
+>>>cm.setdefault('b')
+
+
+
+
+ADDing a new dict to chainmap
+------------------
+to add a new dict to an existing chainmap we use [new_child()]
+
+it creates a new chainmap with a newly added dict

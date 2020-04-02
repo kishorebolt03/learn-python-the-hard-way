@@ -30,7 +30,7 @@ def sortdict(b,rev):
     return a
 
 #using lambda func
-print([[x[0],x[1]['eng']] for x in sorted(dict.items(),key=lambda kv: kv[1]['eng'] ,reverse=True)])
+print([[x[0],x[1]['eng']] for x in sorted(dict.items(),key=lambda kv: kv[1] ,reverse=True)])
 
 
 #HIGHEST of values in a class
@@ -63,12 +63,3 @@ print((functools.reduce(lambda a,b:a+b,[y['eng'] for x,y in dict.items()]))//len
 #using sum func
 print("average ------",
 sum([k['eng'] for k in [d[v] for v in d.keys()]])//len(d))
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,45 @@
+Dict
+
+items()
+	RETURN KEYS AND VALUES
+keys()
+	returns values
+values()
+	returns values
+update()
+	used to update dict values 
+setdefault()
+	used to add key to a dict
+popitem()
+	ramdom pop
+fromkeys()
+	used to create same values for multiple keys
+copy()
+	copy
+clear()
+	clear dict
+pop()
+	pop and delete from 
+get()	
+	prints the value of passed key
+ 
+
+
+Nested dict
+
+d={'dictA':{'key_1':'val1'}}
+d['dictA'].values()
+>>>dict_values(['val1'])
+d['dictA']['key_1']
+>>>'val1'
+
+d={k:v  for k,x,v in [input()]}
+
+
+key from value
+---------------
+
+d={1:'1',2:'2'}
+a=[x if y=='1' else '' for x,y in d.items()]
+print a
+[1,'']
