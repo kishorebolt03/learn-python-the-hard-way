@@ -1,3 +1,18 @@
+'''
+For each integer m find number of n such that the factorial of n ends with exactly m zeroes.
+
+
+
+Input First line of input contains an integer T number of test cases. Each test case contains an integer M (1 ≤ M ≤ 100,000) — the required number of trailing zeroes in factorial.
+
+Output First print k — the number of values of n such that the factorial of n ends with m zeroes. Then print these k integers in increasing order.
+
+
+
+It is a time complexity question, so the output should be efficient and should be within 1 ms
+
+'''
+
 T = int(input())
 
 def num_z(n):
