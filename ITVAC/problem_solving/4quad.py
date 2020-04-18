@@ -1,4 +1,4 @@
-n=9
+n=5
 
 for i in range(n*2+1):
     l=[]
